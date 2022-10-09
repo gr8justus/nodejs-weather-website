@@ -2,7 +2,6 @@
 
 // Modules
 import fetch from 'node-fetch';
-import key from '../api-key.json' assert {type: 'json'};
 
 const forecast = async (address, callback) => {
     try {
