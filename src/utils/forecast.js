@@ -11,9 +11,10 @@ const forecast = async (address, callback) => {
         if (!data.location) {
             callback('Unable to get location. Try another search.')
         } else {
-            const { location: { city, region, country }, current_observation: { condition } } = data;
+            const { location: { city, region, country }, current_observation: { astronomy, condition } } = data;
             callback({
-                forecast: `Today will be ${condition.text.toLowerCase()}. It is currently ${condition.temperature} degrees celcius out.`, 
+                forecast: `Today will be ${condition.text.toLowerCase()}. It is currently ${condition.temperature} degrees celcius out.`,
+                sun: 'Sunrise at ' + astronomy.sunrise + ', and sets at ' + astronomy.sunset,
                 location: city + ', ' + region + ', ' + country
             })
         }

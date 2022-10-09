@@ -23,6 +23,7 @@ const address = form.addEventListener('submit', (e) => {
 
             result = `<p>${data.location}</p>`;
             result += `<p>${data.forecast}</p>`;
+            result += `<p>${data.sun}</p>`;
             print.innerHTML = result
         })
     })
